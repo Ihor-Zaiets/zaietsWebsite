@@ -1,23 +1,14 @@
-.selected-border {
-  border: 3px solid red !important;
-}
-
-.selected-bg {
-  background-color: rgba(0, 0, 0, 0.5) !important;
-}
-
-.selected-hover:hover {
-  background-color: rgba(0, 0, 0, 0.5) !important;
-}
-
-.landing-page, .landing-page > * {
-  box-sizing: border-box;
-  border: 3px solid black;
-}
-
 .image-container {
-  display: inline-block;
+  width: 100%;
+  height: 100vh;
   position: relative;
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.image {
+  width: 100%;
+  max-height: 100vh;
 }
 
 .grid-container {
@@ -25,14 +16,24 @@
   width: 100%;
   height: 100%;
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: repeat(12, 1fr);
-  grid-gap: 5px;
-  padding: 10px;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-gap: 20px;
+  padding: 30px;
 }
 
-.grid-item {
-  background-color: white;
-  grid-column: 10 / span 3;
-  grid-row: 2;
+.grid-text {
+  color: white;
+  grid-column: 1 / span 3;
+  grid-row: 5;
+}
+
+.name-text {
+  font-size: 2.5rem;
+  font-weight: 600;
+}
+
+.position-text {
+  font-size: 1.5rem;
+  font-weight: 600;
 }

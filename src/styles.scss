@@ -1,1 +1,45 @@
 /* You can add global styles to this file, and also import other style files */
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+$breakpoint-xxl: 1400px;
+
+.selected-border {
+  border: 3px solid red !important;
+}
+
+.selected-bg {
+  background-color: rgba(0, 0, 0, 0.5) !important;
+}
+
+.my-container {
+  width: 100%;
+}
+
+@media (min-width: $breakpoint-sm) {
+  .my-container {
+    max-width: 540px;
+  }
+}
+@media (min-width: $breakpoint-md) {
+  .my-container {
+    max-width: 720px;
+  }
+}
+@media (min-width: $breakpoint-lg) {
+  .my-container {
+    max-width: 960px;
+  }
+}
+@media (min-width: $breakpoint-xl) {
+  .my-container {
+    max-width: 1140px;
+  }
+}
+@media (min-width: $breakpoint-xxl) {
+  .my-container {
+    max-width: 1320px;
+  }
+}
+
