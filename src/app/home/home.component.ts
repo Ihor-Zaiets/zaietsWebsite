@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { SharedModule } from '../shared/shared.module';
 import {AboutMeComponent} from "./about-me/about-me.component";
 import {ContactComponent} from "./contact/contact.component";
-import {ProjectsComponent} from "./projects/projects.component";
+import {ExperienceComponent} from "./experience/experience.component";
 import {SkillsComponent} from "./skills/skills.component";
 import {LandingPageComponent} from "./landing-page/landing-page.component";
 
@@ -13,7 +13,7 @@ import {LandingPageComponent} from "./landing-page/landing-page.component";
     SharedModule,
     AboutMeComponent,
     ContactComponent,
-    ProjectsComponent,
+    ExperienceComponent,
     SkillsComponent,
     LandingPageComponent
   ],
