@@ -1,8 +1,122 @@
+// GENERAL //
+* {
+  box-sizing: border-box;
+}
+
 div {
   border: 3px solid rgba(var(--bs-dark-rgb), 1);
+}
+
+.margin-3 {
   margin: 3px;
 }
 
-.margin-0 {
-  margin: 0;
+.selected-border {
+  border: 4px solid red !important;
+}
+
+.fullscreen-box {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.fullscreen-box-header {
+  text-align: center;
+}
+
+// Text inside image //
+
+.image-grid-box {
+  position: relative;
+  background-color: white;
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-gap: 5px;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+}
+
+.image-grid-box2 {
+  border: 3px;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-gap: 5px;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+}
+
+.text-inside-grid {
+  color: white;
+}
+
+.image-grid-box > .grid-cell, .image-grid-box2 > .grid-cell {
+  text-align: center;
+  font-weight: bold;
+  font-size: 2rem;
+  align-content: center;
+  border: 0;
+  background-color: grey;
+  color: white;
+}
+
+.image-grid-box2 > .grid-cell {
+  background-color: darkgreen;
+  grid-row: 1 / 3;
+  grid-column: 1 / span 3;
+}
+
+.image {
+  height: 100%;
+  width: 100%;
+}
+
+.image-flex-box {
+
+}
+
+// Width and height properties //
+
+.width-height-box {
+  border: 2px solid blue;
+  height: auto;
+  width: 50%;
+  float: left;
+  text-align: center;
+
+  min-height: 50px;
+  min-width: 50px;
+}
+
+// Positioning //
+.parent, .parent > * {
+  border: 0;
+  padding: 5px;
+}
+
+.parent {
+  position: relative;
+  background-color: dodgerblue;
+  margin: 10px;
+}
+
+.child-one {
+  position: absolute;
+  background-color: lightgreen;
+  width: 100%;
+  left: 0px;
+}
+
+.child-two {
+  background-color: orange;
+}
+
+.child-three {
+  background-color: violet;
 }
