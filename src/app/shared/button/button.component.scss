@@ -1,6 +1,11 @@
+// Default button styles //
+
 button {
+  width: 100%;
+  height: 100%;
   border: none;
-  border-radius: 5px;
+  border-radius: 7px;
+  overflow: hidden;
   cursor: pointer;
   padding: 10px 20px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
@@ -12,18 +17,41 @@ button:hover {
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2), 0 4px 6px rgba(0, 0, 0, 0.15);
 }
 
-.skill-button {
+// Experience button styles //
 
+.exp-btn {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  align-items: center;
 }
 
-.skill-button:hover {
-
+.image-frame {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.experience-button {
-
+.exp-btn img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
-.experience-button:hover {
-
+.exp-btn-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  height: 30%;
+  width: 100%;
+  font-weight: 600;
+  font-size: 5vw;
 }

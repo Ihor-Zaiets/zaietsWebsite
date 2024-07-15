@@ -1,1 +1,10 @@
-<button class={{class}}><ng-content></ng-content></button>
+<button class="{{class}}" *ngIf="btn_type === ButtonType.default">
+  <ng-content></ng-content>
+</button>
+
+<button class={{class}} *ngIf="btn_type === ButtonType.exp_btn">
+  <div class="image-frame">
+    <img src="{{exp_btn_src}}" alt="{{exp_btn_src_alt}}">
+  </div>
+  <div class="exp-btn-text">{{exp_btn_header}}</div>
+</button>
