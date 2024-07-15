@@ -1,0 +1,12 @@
+.exp-btn-container {
+  display: flex;
+  gap: 10px 40px;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-content: space-around;
+}
+
+.exp-btn {
+  height: auto;
+  width: 40%;
+}
