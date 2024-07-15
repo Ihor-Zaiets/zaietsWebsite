@@ -120,3 +120,19 @@ div {
 .child-three {
   background-color: violet;
 }
+
+
+// image //
+
+.image-frame {
+  position: absolute;
+  top: 100px;
+  left: 10px;
+  width: 50%;
+  height: 40vh;
+}
+
+.image-frame img {
+  max-width: 100%;
+  object-fit: cover;
+}
