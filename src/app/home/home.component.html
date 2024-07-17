@@ -1,7 +1,17 @@
 <app-landing-page></app-landing-page>
-<div class="content-container">
-  <app-skills></app-skills>
-  <app-experience></app-experience>
-  <app-about-me></app-about-me>
-  <app-contact></app-contact>
+<div class="wrapper">
+  <main>
+    <app-skills></app-skills>
+    <app-experience></app-experience>
+    <app-about-me></app-about-me>
+    <app-contact></app-contact>
+  </main>
+  <footer>
+    <app-button class="footer-btn" [btn_type]="ButtonType.footer_btn">Home</app-button>
+    <app-button class="footer-btn" [btn_type]="ButtonType.footer_btn">Skills</app-button>
+    <app-button class="footer-btn" [btn_type]="ButtonType.footer_btn">Experience</app-button>
+    <app-button class="footer-btn" [btn_type]="ButtonType.footer_btn">About me</app-button>
+    <app-button class="footer-btn" [btn_type]="ButtonType.footer_btn">Contact</app-button>
+    <app-button class="footer-btn" [btn_type]="ButtonType.footer_btn">Burger menu</app-button>
+  </footer>
 </div>

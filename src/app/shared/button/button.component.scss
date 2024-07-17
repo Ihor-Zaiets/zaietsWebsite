@@ -55,3 +55,15 @@ button:hover {
   font-weight: 600;
   font-size: 5vw;
 }
+
+// Footer button //
+
+.footer-btn {
+  border-radius: 0;
+}
+
+.footer-btn:hover {
+  transform: none;
+  box-shadow: none;
+  background-color: blue;
+}

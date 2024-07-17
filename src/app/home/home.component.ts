@@ -5,6 +5,7 @@ import {ContactComponent} from "./contact/contact.component";
 import {ExperienceComponent} from "./experience/experience.component";
 import {SkillsComponent} from "./skills/skills.component";
 import {LandingPageComponent} from "./landing-page/landing-page.component";
+import {ButtonType} from "../shared/button/button.component";
 
 @Component({
   selector: 'app-home',
@@ -22,4 +23,5 @@ import {LandingPageComponent} from "./landing-page/landing-page.component";
 })
 export class HomeComponent {
 
+    protected readonly ButtonType = ButtonType;
 }
