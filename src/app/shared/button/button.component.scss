@@ -65,5 +65,8 @@ button:hover {
 .footer-btn:hover {
   transform: none;
   box-shadow: none;
-  background-color: blue;
+}
+
+.active {
+  background-color: orange;
 }
