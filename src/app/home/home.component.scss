@@ -12,3 +12,10 @@ footer {
   flex: 1;
   aspect-ratio: 1 / 1;
 }
+
+.footer-btn img {
+  max-width: 100%;
+  max-height: 100%;
+  color: #cc8411;
+  filter: brightness(0) saturate(100%) invert(67%) sepia(71%) saturate(487%) hue-rotate(1deg) brightness(94%) contrast(89%);
+}
