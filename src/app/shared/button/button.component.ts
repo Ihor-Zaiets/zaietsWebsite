@@ -14,8 +14,8 @@ export enum ButtonType {
 export class ButtonComponent {
   @Input() class: string;
   @Input() exp_btn_header: string;
-  @Input() exp_btn_src: string;
-  @Input() exp_btn_src_alt: string;
+  @Input() btn_img_src: string;
+  @Input() btn_img_alt: string;
   @Input() btn_type: ButtonType = ButtonType.default;
   protected readonly ButtonType = ButtonType;
 }
