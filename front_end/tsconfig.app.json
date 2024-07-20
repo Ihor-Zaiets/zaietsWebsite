@@ -9,6 +9,6 @@
     "src/main.ts"
   ],
   "include": [
-    "src/**/*.d.ts"
+    "front_end/src/**/*.d.ts"
   ]
 }
