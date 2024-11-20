@@ -9,6 +9,7 @@ services:
       - database:/var/lib/postgresql/data
     env_file:
       - back_end/src/main/resources/secrets.properties
+    restart: unless-stopped
 
 volumes:
   database:
