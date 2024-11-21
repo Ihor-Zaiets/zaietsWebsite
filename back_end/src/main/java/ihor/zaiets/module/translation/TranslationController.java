@@ -15,7 +15,7 @@ public class TranslationController {
     private TranslationService translationService;
 
     @GetMapping("/{languageCode}")
-    public ResponseEntity<List<Translation>> getTranslationsForLanguage(@PathVariable String languageCode) {
+    public ResponseEntity<List<Translation>> getTranslationsForLanguage(@PathVariable("languageCode") String languageCode) {
         return ResponseEntity.ok(translationService.getTranslationsForLanguage(languageCode));
     }
 }
