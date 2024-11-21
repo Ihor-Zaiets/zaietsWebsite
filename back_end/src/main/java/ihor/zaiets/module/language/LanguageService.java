@@ -6,4 +6,8 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class LanguageService extends BaseService<Language, Long, LanguageRepository> {
+
+    public Language findByLanguageCode(String languageCode) {
+        return this.dao.findByLanguageCode(languageCode);
+    }
 }
