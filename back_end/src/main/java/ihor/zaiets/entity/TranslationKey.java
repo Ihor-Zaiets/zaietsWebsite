@@ -11,10 +11,7 @@ import lombok.Setter;
 @Getter
 @Entity
 @Table(name = "lang_key")
-public class TranslationKey {
-
-    @Id
-    private Long id;
+public class TranslationKey extends IEntity {
 
     @Column(name = "key")
     private String translationKey;

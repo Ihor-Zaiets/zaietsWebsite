@@ -8,9 +8,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @Table(name = "lang_content")
-public class Translation {
-    @Id
-    private Long id;
+public class Translation extends IEntity {
 
     @OneToOne
     @JoinColumn(name = "lang_id", referencedColumnName = "id")

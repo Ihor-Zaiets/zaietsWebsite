@@ -1,9 +1,6 @@
 package ihor.zaiets.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -11,9 +8,7 @@ import lombok.Setter;
 @Setter
 @Entity
 @Table(name = "lang")
-public class Language {
-    @Id
-    private Long id;
+public class Language extends IEntity {
 
     @Column(name = "lang_code")
     private String languageCode;

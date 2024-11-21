@@ -1,5 +1,6 @@
 package ihor.zaiets.module;
 
+import ihor.zaiets.entity.IEntity;
 import ihor.zaiets.exception.ResourceNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -8,7 +9,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public abstract class BaseService<T, ID, DAO extends JpaRepository<T, ID>> {
+public abstract class BaseService<T extends IEntity, ID, DAO extends JpaRepository<T, ID>> {
 
     @Autowired
     protected DAO dao;
