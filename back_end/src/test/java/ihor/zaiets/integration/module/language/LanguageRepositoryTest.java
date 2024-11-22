@@ -1,7 +1,8 @@
-package ihor.zaiets.module.language;
+package ihor.zaiets.integration.module.language;
 
 import ihor.zaiets.entity.Language;
-import ihor.zaiets.module.BasicRepositoryTest;
+import ihor.zaiets.integration.BasicRepositoryTest;
+import ihor.zaiets.module.language.LanguageRepository;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;

@@ -1,4 +1,4 @@
-package ihor.zaiets.module;
+package ihor.zaiets.integration;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

@@ -1,4 +1,4 @@
-package ihor.zaiets.module;
+package ihor.zaiets.integration;
 
 import ihor.zaiets.entity.IEntity;
 import org.junit.jupiter.api.Test;
