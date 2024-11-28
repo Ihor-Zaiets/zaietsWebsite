@@ -6,6 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/translation")
@@ -15,7 +16,7 @@ public class TranslationController {
     private TranslationService translationService;
 
     @GetMapping("/{languageCode}")
-    public ResponseEntity<List<Translation>> getTranslationsForLanguage(@PathVariable("languageCode") String languageCode) {
+    public ResponseEntity<Map<String, String>> getTranslationsForLanguage(@PathVariable("languageCode") String languageCode) {
         return ResponseEntity.ok(translationService.getTranslationsForLanguage(languageCode));
     }
 }

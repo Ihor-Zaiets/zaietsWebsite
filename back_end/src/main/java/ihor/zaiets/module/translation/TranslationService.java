@@ -6,7 +6,7 @@ import ihor.zaiets.module.language.LanguageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
+import java.util.Map;
 
 @Service
 public class TranslationService extends BaseService<Translation, Long, TranslationRepository> {
@@ -14,7 +14,7 @@ public class TranslationService extends BaseService<Translation, Long, Translati
     @Autowired
     private LanguageService languageService;
 
-    public List<Translation> getTranslationsForLanguage(String languageCode) {
-        return this.dao.findAllByLanguage(languageService.findByLanguageCode(languageCode));
+    public Map<String, String> getTranslationsForLanguage(String languageCode) {
+        return this.dao.findTranslationsByLanguage(languageCode);
     }
 }
