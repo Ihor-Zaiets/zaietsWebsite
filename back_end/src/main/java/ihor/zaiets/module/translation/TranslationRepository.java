@@ -2,18 +2,18 @@ package ihor.zaiets.module.translation;
 
 import ihor.zaiets.entity.Language;
 import ihor.zaiets.entity.Translation;
+import ihor.zaiets.module.translation.dto.TranslationKeyValueDTO;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
-import java.util.Map;
 
 @Repository
 public interface TranslationRepository extends JpaRepository<Translation, Long> {
     List<Translation> findAllByLanguage(Language language);
 
-    @Query(value = "select lk.key, lc.lang_content from lang_content lc left join lang_key lk on lc.key_id = lk.id where lc.lang_id = (select l.id from lang l where lang_code = :languageCode)", nativeQuery = true)
-    Map<String, String> findTranslationsByLanguage(@Param("languageCode") String languageCode);
+    @Query(value = "select new ihor.zaiets.module.translation.dto.TranslationKeyValueDTO(keyTable.translationKey, translationTable.translation) from Translation translationTable left join translationTable.translationKey keyTable where translationTable.language = (select l from Language l where l.languageCode = :languageCode)")
+    List<TranslationKeyValueDTO> findTranslationsByLanguage(@Param("languageCode") String languageCode);
 }
