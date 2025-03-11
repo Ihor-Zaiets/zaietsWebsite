@@ -9,9 +9,10 @@ import {TranslationService} from "../../services/translation.service";
   styleUrl: './landing-page.component.scss'
 })
 export class LandingPageComponent {
+  pageKey: string = 'landing_page'
+
   constructor(private translationService: TranslationService) {}
 
-  pageKey: string = 'landing_page'
   getTranslation(key: string) {
     return this.translationService.getTranslationForKey(this.pageKey + '.' + key);
   }

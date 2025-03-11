@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {SharedModule} from "../../shared/shared.module";
+import {TranslationService} from "../../services/translation.service";
 
 @Component({
   selector: 'app-skills',
@@ -11,5 +12,11 @@ import {SharedModule} from "../../shared/shared.module";
   styleUrl: './skills.component.scss'
 })
 export class SkillsComponent {
+  pageKey: string = 'skills'
 
+  constructor(private translationService: TranslationService) {}
+
+  getTranslation(key: string) {
+    return this.translationService.getTranslationForKey(this.pageKey + '.' + key);
+  }
 }
