@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {TranslationService} from "../../services/translation.service";
 
 @Component({
   selector: 'app-contact',
@@ -8,5 +9,11 @@ import { Component } from '@angular/core';
   styleUrl: './contact.component.scss'
 })
 export class ContactComponent {
+  pageKey: string = 'contact'
 
+  constructor(private translationService: TranslationService) {}
+
+  getTranslation(key: string): string {
+    return this.translationService.getTranslationForKey(this.pageKey + '.' + key);
+  }
 }

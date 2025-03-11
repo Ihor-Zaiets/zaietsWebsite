@@ -16,7 +16,7 @@ export class SkillsComponent {
 
   constructor(private translationService: TranslationService) {}
 
-  getTranslation(key: string) {
+  getTranslation(key: string): string {
     return this.translationService.getTranslationForKey(this.pageKey + '.' + key);
   }
 }
