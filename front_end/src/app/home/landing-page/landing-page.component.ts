@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {TranslationService} from "../../services/translation.service";
 
 @Component({
   selector: 'app-landing-page',
@@ -8,5 +9,10 @@ import { Component } from '@angular/core';
   styleUrl: './landing-page.component.scss'
 })
 export class LandingPageComponent {
+  constructor(private translationService: TranslationService) {}
 
+  pageKey: string = 'landing_page'
+  getTranslation(key: string) {
+    return this.translationService.getTranslationForKey(this.pageKey + '.' + key);
+  }
 }

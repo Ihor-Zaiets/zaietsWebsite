@@ -18,4 +18,8 @@ export class TranslationService {
       translationDTO.forEach(dto => this.translations.set(dto.key, dto.value))
     })
   }
+
+  getTranslationForKey(key: string): string {
+    return this.translations.get(key) || '[Error: Missing translation]';
+  }
 }
