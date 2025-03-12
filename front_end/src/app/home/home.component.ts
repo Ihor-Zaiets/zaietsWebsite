@@ -33,19 +33,10 @@ export class HomeComponent implements OnInit {
       const buttons = document.querySelectorAll('button.footer-btn') as NodeListOf<HTMLElement>;
       const sections = document.querySelectorAll('#app-landing-page, section') as NodeListOf<HTMLElement>;
 
-      console.log(sections)
-      console.log(buttons)
-      console.log(sections[0].localName + '[' + 0 + '] offsetTop: ' + (sections[0].offsetTop + 150))
-      console.log(sections[1].localName + '[' + 1 + '] offsetTop: ' + (sections[1].offsetTop + 150))
-      console.log(sections[2].localName + '[' + 2 + '] offsetTop: ' + (sections[2].offsetTop + 150))
-      console.log(sections[3].localName + '[' + 3 + '] offsetTop: ' + (sections[3].offsetTop + 150))
-      console.log(sections[4].localName + '[' + 4 + '] offsetTop: ' + (sections[4].offsetTop + 150))
       const checkSections = () => {
         let index = 0;
         while (index < sections.length) {
           if (this.isElementXPixelsInViewport(sections[index], 150)) {
-            console.log('Change button color.')
-            console.log('window.scrollY: ' + window.scrollY)
             buttons.forEach((button) => button.classList.remove('active'));
             buttons[index].classList.add('active');
           }
