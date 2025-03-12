@@ -16,4 +16,7 @@ public interface TranslationRepository extends JpaRepository<Translation, Long> 
 
     @Query(value = "select new ihor.zaiets.module.translation.dto.TranslationKeyValueDTO(keyTable.translationKey, translationTable.translation) from Translation translationTable left join translationTable.translationKey keyTable where translationTable.language = (select l from Language l where l.languageCode = :languageCode)")
     List<TranslationKeyValueDTO> findTranslationsByLanguage(@Param("languageCode") String languageCode);
+
+    @Query(value = "select lang_content from lang_content where key_id = (select id from lang_key where key = :key) and lang_id = (select id from lang where lang_code = 'en')", nativeQuery = true)
+    String findEnglishTranslationByKey(@Param("key") String translationKey);
 }
