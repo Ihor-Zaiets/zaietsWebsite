@@ -12,9 +12,11 @@
     <app-button class="footer-btn" [btn_type]="ButtonType.default" data-section="app-experience"><img src="../../assets/icons/briefcase.svg" alt="experience icon"></app-button>
     <app-button class="footer-btn" [btn_type]="ButtonType.default" data-section="app-about-me"><img src="../../assets/icons/user.svg" alt="about me icon"></app-button>
     <app-button class="footer-btn" [btn_type]="ButtonType.default" data-section="app-contact"><img src="../../assets/icons/email.svg" alt="contact icon"></app-button>
-    <app-button class="footer-btn" [btn_type]="ButtonType.default" (click)="toggleLanguageMenu()"><img src="../../assets/icons/menu-burger.svg" alt="burger menu icon"></app-button>
+    <app-button class="footer-btn" [btn_type]="ButtonType.default" (click)="toggleBurgerMenu()"><img src="../../assets/icons/menu-burger.svg" alt="burger menu icon"></app-button>
   </footer>
   <div class="language-menu" *ngIf="showLanguageMenu">
-    <button *ngFor="let language of languages" (click)="selectLanguage(language.languageCode)">{{language.languageName}}</button>
+    <app-button *ngFor="let language of languages" (click)="selectLanguage(language.languageCode)">{{language.languageName}}</app-button>
   </div>
+  <app-button *ngIf="showBurgerMenu" (click)="toggleLanguageMenu()">{{getTranslation('languages')}}</app-button>
+  <app-button *ngIf="showBurgerMenu" (click)="downloadCV()">{{getTranslation('download_cv')}}</app-button>
 </div>

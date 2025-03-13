@@ -28,12 +28,31 @@ import {Language} from "../entities/Language";
 export class HomeComponent implements OnInit {
     protected readonly ButtonType = ButtonType;
     languages: Language[];
+    showBurgerMenu: boolean = false;
     showLanguageMenu: boolean = false;
+    pageKey: string = 'home'
 
     constructor(private translationService: TranslationService) {}
     ngOnInit() {
       this.trackPageScrollOnFooter();
       this.languages = this.translationService.getAllLanguages();
+    }
+
+    getTranslation(key: string): string {
+      return this.translationService.getTranslationForKey(this.pageKey + '.' + key);
+    }
+
+    downloadCV() {
+      const fileName = 'Ihor Zaiets CV developer fullstack.pdf'
+      const fileUrl = "assets/files/" + fileName;
+      const downloadLink = document.createElement('a');
+      downloadLink.href = fileUrl;
+      downloadLink.download = fileName;
+      downloadLink.click();
+    }
+
+    toggleBurgerMenu() {
+      this.showBurgerMenu = !this.showBurgerMenu;
     }
 
     toggleLanguageMenu() {
