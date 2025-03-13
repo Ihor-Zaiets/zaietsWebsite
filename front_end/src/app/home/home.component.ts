@@ -6,11 +6,15 @@ import {ExperienceComponent} from "./experience/experience.component";
 import {SkillsComponent} from "./skills/skills.component";
 import {LandingPageComponent} from "./landing-page/landing-page.component";
 import {ButtonType} from "../shared/button/button.component";
+import {CommonModule} from "@angular/common";
+import {TranslationService} from "../services/translation.service";
+import {Language} from "../entities/Language";
 
 @Component({
   selector: 'app-home',
   standalone: true,
   imports: [
+    CommonModule,
     SharedModule,
     AboutMeComponent,
     ContactComponent,
@@ -23,9 +27,23 @@ import {ButtonType} from "../shared/button/button.component";
 })
 export class HomeComponent implements OnInit {
     protected readonly ButtonType = ButtonType;
+    languages: Language[];
+    showLanguageMenu: boolean = false;
 
+    constructor(private translationService: TranslationService) {}
     ngOnInit() {
       this.trackPageScrollOnFooter();
+      this.languages = this.translationService.getAllLanguages();
+    }
+
+    toggleLanguageMenu() {
+      this.showLanguageMenu = !this.showLanguageMenu;
+    }
+
+    selectLanguage(languageCode: string) {
+      this.translationService.getAllTranslationsForLanguage(languageCode);
+      console.log("language: " + languageCode);
+      this.showLanguageMenu = false;
     }
 
   private trackPageScrollOnFooter() {
