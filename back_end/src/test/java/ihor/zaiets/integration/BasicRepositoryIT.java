@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 @DataJpaTest
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
-public abstract class BasicRepositoryTest <T extends IEntity, DAO extends JpaRepository<T, Long>> {
+public abstract class BasicRepositoryIT<T extends IEntity, DAO extends JpaRepository<T, Long>> {
 
     @Autowired
     protected DAO dao;

@@ -1,14 +1,14 @@
 package ihor.zaiets.integration.module.language;
 
 import ihor.zaiets.entity.Language;
-import ihor.zaiets.integration.BasicRepositoryTest;
+import ihor.zaiets.integration.BasicRepositoryIT;
 import ihor.zaiets.module.language.LanguageRepository;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
-public class LanguageRepositoryTest extends BasicRepositoryTest<Language, LanguageRepository> {
+public class LanguageRepositoryIT extends BasicRepositoryIT<Language, LanguageRepository> {
 
     @Test
     public void testUpdate() {
