@@ -19,6 +19,32 @@
     <maven.compiler.target>17</maven.compiler.target>
   </properties>
 
+  <build>
+    <plugins>
+      <!-- Runs Unit Tests -->
+      <plugin>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>3.0.0-M7</version>
+      </plugin>
+
+      <!-- Runs Integration Tests -->
+      <plugin>
+        <artifactId>maven-failsafe-plugin</artifactId>
+        <version>3.0.0-M7</version>
+        <executions>
+          <execution>
+            <id>integration-tests</id>
+            <phase>verify</phase>
+            <goals>
+              <goal>integration-test</goal>
+              <goal>verify</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+
   <dependencies>
     <dependency>
       <groupId>org.springframework.boot</groupId>
