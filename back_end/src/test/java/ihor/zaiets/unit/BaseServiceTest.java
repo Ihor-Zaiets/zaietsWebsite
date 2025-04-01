@@ -34,7 +34,7 @@ public abstract class BaseServiceTest <T extends IEntity, DAO extends JpaReposit
 
         T returnedEntity = baseService.saveEntity(entity);
         verify(dao.save(entity), times(1));
-        assertEquals(returnedEntity, savedEntity);
+        assertEquals(savedEntity, returnedEntity);
     }
 
     @Test
