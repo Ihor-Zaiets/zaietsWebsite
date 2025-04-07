@@ -1,9 +1,16 @@
-# Build Angular app
-FROM node:18 as build
-WORKDIR /app
-COPY . .
-RUN npm install && npm run build --omit=dev
+# Development Dockerfile for Angular with ng serve
+FROM node:18
 
-# Serve with Nginx
-FROM nginx:alpine
-COPY --from=build /app/dist/zaiets-website /usr/share/nginx/html
+WORKDIR /app
+
+COPY package*.json ./
+
+RUN npm install
+
+COPY . .
+
+# Expose the port ng serve runs on
+EXPOSE 4200
+
+# Start Angular in dev mode
+CMD ["npm", "run", "start"]
