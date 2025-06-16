@@ -36,7 +36,6 @@ export class HomeComponent implements OnInit {
     ngOnInit() {
       this.trackPageScrollOnFooter();
       this.translationService.getAllLanguages().subscribe(languages => this.languages = languages);
-      console.log("this.languages: " + this.languages)
     }
 
     getTranslation(key: string): string {
