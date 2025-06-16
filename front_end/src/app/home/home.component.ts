@@ -30,7 +30,7 @@ export class HomeComponent implements OnInit {
     languages: Language[];
     showBurgerMenu: boolean = false;
     showLanguageMenu: boolean = false;
-    pageKey: string = 'home'
+    pageKey: string = 'home';
 
     constructor(private translationService: TranslationService) {}
     ngOnInit() {
@@ -73,7 +73,7 @@ export class HomeComponent implements OnInit {
       const checkSections = () => {
         let index = 0;
         while (index < sections.length) {
-          if (this.isElementXPixelsInViewport(sections[index], 150)) {
+          if (this.isElementInViewportAndAboveFooter(sections[index])) {
             buttons.forEach((button) => button.classList.remove('active'));
             buttons[index].classList.add('active');
           }
@@ -95,13 +95,10 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  isElementXPixelsInViewport = function(el: Element, pixelsVisible:number) {
+  isElementInViewportAndAboveFooter = function(el: Element) {
       const rect = el.getBoundingClientRect();
       const windowHeight = (window.innerHeight || document.documentElement.clientHeight);
-
-    return !(
-      Math.floor(rect.height - ((rect.top >= 0) ? 0 : rect.top)) < pixelsVisible ||
-      Math.floor(rect.height - (rect.bottom - windowHeight)) < pixelsVisible
-    )
+      const footer = document.querySelector("footer");
+      return rect.top - windowHeight + footer!.offsetHeight <= 0
   }
 }
