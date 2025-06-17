@@ -5,6 +5,10 @@ main {
 footer {
   position: sticky;
   bottom: 0;
+  background-color: white;
+}
+
+footer .footer-buttons {
   display: flex;
 }
 
