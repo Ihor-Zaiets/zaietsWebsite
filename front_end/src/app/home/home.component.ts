@@ -28,8 +28,9 @@ import {Language} from "../entities/Language";
 export class HomeComponent implements OnInit {
     protected readonly ButtonType = ButtonType;
     languages: Language[];
-    showBurgerMenu: boolean = false;
-    showLanguageMenu: boolean = false;
+    burgerMainMenu: string = 'mainManu';
+    burgerLanguageMenu: string = 'languageMenu';
+    burgerMenuToShow: string | null;
     pageKey: string = 'home';
 
     constructor(private translationService: TranslationService) {}
@@ -38,8 +39,12 @@ export class HomeComponent implements OnInit {
       this.translationService.getAllLanguages().subscribe(languages => this.languages = languages);
     }
 
-    getTranslation(key: string): string {
+    getTranslationForComponent(key: string): string {
       return this.translationService.getTranslationForKey(this.pageKey + '.' + key);
+    }
+
+    getGeneralTranslation(key: string): string {
+      return this.translationService.getTranslationForKey(key);
     }
 
     downloadCV() {
@@ -51,18 +56,21 @@ export class HomeComponent implements OnInit {
       downloadLink.click();
     }
 
-    toggleBurgerMenu() {
-      this.showBurgerMenu = !this.showBurgerMenu;
+    showBurgerMenu() {
+      if (this.burgerMenuToShow == this.burgerMainMenu)
+        this.burgerMenuToShow = null;
+      else
+        this.burgerMenuToShow = this.burgerMainMenu;
     }
 
-    toggleLanguageMenu() {
-      this.showLanguageMenu = !this.showLanguageMenu;
+    showLanguageMenu() {
+      this.burgerMenuToShow = this.burgerLanguageMenu;
     }
 
     selectLanguage(languageCode: string) {
       this.translationService.getAllTranslationsForLanguage(languageCode);
       console.log("language: " + languageCode);
-      this.showLanguageMenu = false;
+      this.burgerMenuToShow = this.burgerMainMenu;
     }
 
   private trackPageScrollOnFooter() {
