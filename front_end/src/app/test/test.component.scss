@@ -28,7 +28,39 @@ div {
   text-align: center;
 }
 
-// Text inside image //
+// Grid container //
+
+.grid-container {
+  border: lightseagreen solid 4px;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-gap: 10px;
+}
+
+@media (min-width: 600px) {
+  .grid-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.grid-container div {
+  border: 0;
+  background-color: lightgray;
+}
+
+.item1 {
+
+}
+
+.item2 {
+
+}
+
+.item3 {
+
+}
+
+// Text over image //
 
 .image-grid-box {
   position: relative;
