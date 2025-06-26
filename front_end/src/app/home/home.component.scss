@@ -1,3 +1,5 @@
+@use "styles/variables" as *;
+
 main {
   padding: 0 20px 20px;
 }
@@ -22,4 +24,16 @@ footer .footer-buttons {
   max-height: 100%;
   color: #cc8411;
   filter: brightness(0) saturate(100%) invert(67%) sepia(71%) saturate(487%) hue-rotate(1deg) brightness(94%) contrast(89%);
+}
+
+
+@media (min-width: $breakpoint-md) {
+  main {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+  }
+
+  main section {
+    grid-column: 4 / span 6;
+  }
 }
