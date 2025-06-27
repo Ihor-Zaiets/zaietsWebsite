@@ -36,4 +36,12 @@ main {
   main section {
     grid-column: 4 / span 6;
   }
+
+  .navbar {
+    position: fixed;
+    top: 0;
+    bottom: unset;
+    right: 0;
+    width: 50vw;
+  }
 }
