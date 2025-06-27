@@ -106,7 +106,7 @@ export class HomeComponent implements OnInit {
   isElementInViewportAndAboveFooter = function(el: Element) {
       const rect = el.getBoundingClientRect();
       const windowHeight = (window.innerHeight || document.documentElement.clientHeight);
-      const footer = document.querySelector("footer");
+      const footer = document.querySelector(".navbar") as HTMLElement;
       return rect.top - windowHeight + footer!.offsetHeight <= 0
   }
 }

@@ -6,7 +6,7 @@
     <section><app-about-me id="app-about-me"></app-about-me></section>
     <section><app-contact id="app-contact"></app-contact></section>
   </main>
-  <footer>
+  <div class="navbar">
     <div class="language-menu" *ngIf="burgerMenuToShow === burgerLanguageMenu">
       <app-button (click)="showBurgerMenu()">{{getGeneralTranslation('back')}}</app-button>
       <app-button *ngFor="let language of languages" (click)="selectLanguage(language.languageCode)">{{language.languageName}}</app-button>
@@ -21,5 +21,5 @@
       <app-button class="footer-btn" [btn_type]="ButtonType.default" data-section="app-contact"><img src="../../assets/icons/email.svg" alt="contact icon"></app-button>
       <app-button class="footer-btn" [btn_type]="ButtonType.default" (click)="showBurgerMenu()"><img src="../../assets/icons/menu-burger.svg" alt="burger menu icon"></app-button>
     </div>
-  </footer>
+  </div>
 </div>
