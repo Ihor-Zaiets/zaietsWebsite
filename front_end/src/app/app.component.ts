@@ -18,5 +18,6 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.translationService.getAllTranslationsForLanguage("en");
+    document.documentElement.setAttribute('data-theme', 'light')
   }
 }
