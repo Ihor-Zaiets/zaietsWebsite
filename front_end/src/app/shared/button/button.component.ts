@@ -3,7 +3,6 @@ import {Component, Input} from '@angular/core';
 export enum ButtonType {
   default = 'default',
   exp_btn = 'exp_btn',
-  footer_btn = 'footer_btn',
 }
 
 @Component({
