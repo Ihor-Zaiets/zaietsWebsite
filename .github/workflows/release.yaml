@@ -5,11 +5,10 @@ on:
     tags:
       - 'v*'  # Only triggers on tags that start with "v", like v1.0.0
 
-permissions:
-  contents: write
 
 jobs:
   release:
+    permissions: write-all
     runs-on: ubuntu-latest
 
     steps:
