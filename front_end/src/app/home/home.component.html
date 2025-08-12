@@ -13,13 +13,13 @@
     </div>
     <app-button *ngIf="burgerMenuToShow === burgerMainMenu" (click)="showLanguageMenu()">{{getTranslationForComponent('languages')}}</app-button>
     <app-button *ngIf="burgerMenuToShow === burgerMainMenu" (click)="downloadCV()">{{getTranslationForComponent('download_cv')}}</app-button>
-    <div class="footer-buttons">
-      <app-button class="footer-btn" [btn_type]="ButtonType.default" data-section="app-landing-page"><img src="assets/icons/home.svg" alt="home icon"></app-button>
-      <app-button class="footer-btn" [btn_type]="ButtonType.default" data-section="app-skills"><img src="assets/icons/skill.svg" alt="skills icon"></app-button>
-      <app-button class="footer-btn" [btn_type]="ButtonType.default" data-section="app-experience"><img src="assets/icons/briefcase.svg" alt="experience icon"></app-button>
-      <app-button class="footer-btn" [btn_type]="ButtonType.default" data-section="app-about-me"><img src="assets/icons/user.svg" alt="about me icon"></app-button>
-      <app-button class="footer-btn" [btn_type]="ButtonType.default" data-section="app-contact"><img src="assets/icons/email.svg" alt="contact icon"></app-button>
-      <app-button class="footer-btn" [btn_type]="ButtonType.default" (click)="showBurgerMenu()"><img src="assets/icons/menu-burger.svg" alt="burger menu icon"></app-button>
+    <div class="navbar-buttons">
+      <app-button class="footer-btn" [btn_type]="ButtonType.default" data-section="app-landing-page"><img src="assets/icons/home.svg" alt="home icon"><span>Home</span></app-button>
+      <app-button class="footer-btn" [btn_type]="ButtonType.default" data-section="app-skills"><img src="assets/icons/skill.svg" alt="skills icon"><span>Skills</span></app-button>
+      <app-button class="footer-btn" [btn_type]="ButtonType.default" data-section="app-experience"><img src="assets/icons/briefcase.svg" alt="experience icon"><span>Experience</span></app-button>
+      <app-button class="footer-btn" [btn_type]="ButtonType.default" data-section="app-about-me"><img src="assets/icons/user.svg" alt="about me icon"><span>About</span></app-button>
+      <app-button class="footer-btn" [btn_type]="ButtonType.default" data-section="app-contact"><img src="assets/icons/email.svg" alt="contact icon"><span>Contact</span></app-button>
+      <app-button class="footer-btn" [btn_type]="ButtonType.default" id="navbar-menu" (click)="showBurgerMenu()"><img src="assets/icons/menu-burger.svg" alt="burger menu icon"></app-button>
     </div>
   </div>
 </div>

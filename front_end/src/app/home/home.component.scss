@@ -15,7 +15,7 @@ main {
   background-color: white;
 }
 
-.navbar .footer-buttons {
+.navbar .navbar-buttons {
   display: flex;
 }
 
@@ -29,6 +29,10 @@ main {
   max-height: 100%;
   color: #cc8411;
   filter: brightness(0) saturate(100%) invert(67%) sepia(71%) saturate(487%) hue-rotate(1deg) brightness(94%) contrast(89%);
+}
+
+.footer-btn span {
+  display: none;
 }
 
 
@@ -47,6 +51,35 @@ main {
     top: 0;
     bottom: unset;
     right: 0;
-    width: 50vw;
+    height: 4rem;
+    width: 100%;
+    font-size: 2em;
+  }
+
+  .navbar-buttons {
+    height: 100%;
+  }
+
+  .navbar-buttons img {
+    display: none;
+  }
+
+  #navbar-menu img {
+    display: unset;
+  }
+
+  .footer-btn {
+    flex: unset;
+    flex: 1;
+    aspect-ratio: unset;
+  }
+
+  .footer-btn span {
+    display: unset;
+    font-size: 20px;
+  }
+
+  .footer-btn img {
+    height: 1.2em;
   }
 }
