@@ -58,12 +58,6 @@ button:hover {
   font-size: 5vw;
 }
 
-@media (min-width: $breakpoint-md) {
-  .exp-btn-text {
-    font-size: 2.5vw;
-  }
-}
-
 // Footer button //
 
 .footer-btn {
@@ -83,4 +77,10 @@ button:hover {
 .active {
   background-color: var(--primary);
   color: white;
+}
+
+@media (min-width: $breakpoint-md) {
+  .exp-btn-text {
+    font-size: 2.5vw;
+  }
 }
